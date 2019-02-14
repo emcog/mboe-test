@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MBOE Meditations</title>
+	<link rel="stylesheet" href="https://use.typekit.net/edm6svv.css">
+	<link rel="stylesheet" href="assets/styles/main.css">
+	<!-- Include sweet alert -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<!-- Include amplitude.js -->
+	<script type="text/javascript" src="/assets/js/amplitude.min.js"></script>
+	<script type="text/javascript" src="/assets/js/main.js"></script>
+
+</head>
+<body>
+
+<!-- <script type="text/javascript">
+	document.alert("MBOE Meditations\n14th February 2018\nThis page is currently under development and features will be added throughout the day\nPlease access the guided on a desktop or laptop computer and click the download button");
+</script>
+ -->
+ <div id="popup">
+	<nav class="grid-14-col">
+		<img class="is-first" src="/assets/vectors/mindfulness-connected-logo.svg">
+		<a class="is-last" href ="www.mindfulnessconnected.com">Main site</a>
+		<!-- <ul>
+			<li class="logo"><img src="/assets/vectors/mindfulness-connected-logo.svg"></li>
+			<li>Main site</li>
+		</ul> -->
+	</nav>
+	<div id="cover" class="grid-14-col">
+		<img src="/assets/vectors/MBOE-logo.svg">
+		<span>Mindfulness-Based Organisational Education</span>
+		<h1>Meditations</h1>
+	</div>
+
+
+	<div id="audio" class="grid-14-col">
+		<div id="audio-player" class="grid-14-col">
+			
+			<div class="meta-container">
+				<span data-amplitude-song-info="name" class="song-name"></span>
+  				<!-- <span amplitude-song-info="artist" amplitude-main-song-info="true"></span> -->
+			</div>
+
+			<progress class="amplitude-song-played-progress" amplitude-main-song-played-progress="true" id="song-played-progress"></progress>
+
+			<div class="time-container">
+  				<span class="current-time">
+    			<span class="amplitude-current-minutes" amplitude-main-current-minutes="true"></span>:<span class="amplitude-current-seconds" amplitude-main-current-seconds="true"></span>
+  				</span>
+  				<span>/</span>
+  				<span class="duration">
+    			<span class="amplitude-duration-minutes" amplitude-main-duration-minutes="true"></span>:<span class="amplitude-duration-seconds" amplitude-main-duration-seconds="true"></span>
+  				</span>
+			</div>
+
+			<div class="control-container">
+				<div class="amplitude-prev"></div>
+  				<div class="amplitude-play-pause" amplitude-main-play-pause="true" id="play-pause"></div>
+  				<div class="amplitude-next"></div>
+			</div>
+		</div>
+
+
+		<table id="audio-tracks">
+			<thead>
+				<tr class="table-row_is-hidden"><th>Meditation number</th><th>Meditation name</th><th>Meditation lenghth</th></tr>
+			</thead>
+			<tbody>
+				<tr><td class="audio-track__number">01</td><td class="audio-track__name" data-amplitude-song-info="name" data-amplitude-song-index="0"></td><td class="audio-track__length"></td></tr>
+				<tr><td class="audio-track__number">02</td><td class="audio-track__name" data-amplitude-song-info="name" data-amplitude-song-index="1"></td><td class="audio-track__length"></td></tr>
+				<tr><td class="audio-track__number">03</td><td class="audio-track__name" data-amplitude-song-info="name" data-amplitude-song-index="2"></td><td class="audio-track__length"></td></tr>
+				<tr><td class="audio-track__number">04</td><td class="audio-track__name" data-amplitude-song-info="name" data-amplitude-song-index="3"></td><td class="audio-track__length"></td></tr>
+				<tr><td class="audio-track__number">05</td><td class="audio-track__name" data-amplitude-song-info="name" data-amplitude-song-index="4"></td><td class="audio-track__length"></td></tr>
+				<tr><td class="audio-track__number">06</td><td class="audio-track__name" data-amplitude-song-info="name" data-amplitude-song-index="5"></td><td class="audio-track__length"></td></tr>
+			</tbody>
+			<tfoot></tfoot>
+		</table>
+
+
+	</div>
+	<div id="download" class="grid-14-col">
+		<a class="btn" href="/assets/meditations/MBOE-meditations.zip" download="MBOE Meditations">Download MBOE Meditations<img src="/assets/vectors/icon-download.svg"></href>
+	</div>
+
+
+<script type="text/javascript">
+
+	swal("17:00 14th February", "This page is being worked on and functionality will improve throughout the evening.\n\n•Meditations can be\n–Listened to and \n–skiped to by using the \nplay/pause button and the next previous button.\n\n•The meditations can be downloaded\n\n•The meditations can not be accessed by clciking on their name, yet.");
+
+
+	Amplitude.init({
+		"songs": [
+		{
+			"name": "Three-step reset",
+			"artist": "Mark Leonard",
+			"album": "MBOE Meditations",
+			"url": "/assets/meditations/three-step-reset.mp3"
+		},
+		{
+			"name": "Bodyscan",
+			"artist": "Mark Leonard",
+			"album": "MBOE Meditations",
+			"url": "/assets/meditations/bodyscan.mp3"
+		},
+		{
+			"name": "Posture and breath",
+			"artist": "Mark Leonard",
+			"album": "MBOE Meditations",
+			"url": "/assets/meditations/posture-and-breath.mp3"
+		},
+		{
+			"name": "Stretching and sitting",
+			"artist": "Mark Leonard",
+			"album": "MBOE Meditations",
+			"url": "/assets/meditations/stretching-and-sitting.mp3"
+		},
+		{
+			"name": "Mindfulness of feelings",
+			"artist": "Mark Leonard",
+			"album": "MBOE",
+			"url": "/assets/meditations/mindfulness-of-feelings.mp3"
+		},
+		{
+			"name": "Concentration and allowing the mind to wander",
+			"artist": "Mark Leonard",
+			"album": "MBOE",
+			"url": "/assets/meditations/concentration-and-allowing-the-mind-to-wander.mp3"
+		}
+	]
+
+	// continue_next: false
+
+	});
+	
+
+	// clickable slider
+	document.getElementById('song-played-progress').addEventListener('click', function(e){
+		let offset = this.getBoundingClientRect();
+		let x = e.pageX - offset.left;
+
+		Amplitude.setSongPlayedPercentage((parseFloat(x)/parseFloat(this.offsetWidth))*100);
+	})
+</script>
+
+
+</body>
+</html>
